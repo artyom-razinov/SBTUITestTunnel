@@ -126,7 +126,7 @@ static NSTimeInterval SBTUITunneledApplicationDefaultTimeout = 30.0;
 - (void)launchConnectionless:(NSString * (^)(NSString *, NSDictionary<NSString *, NSString *> *))command
 {
     self.connectionlessBlock = command;
-    [self terminate];
+    //[self terminate];
 }
 
 - (void)waitForAppReady
@@ -141,7 +141,7 @@ static NSTimeInterval SBTUITunneledApplicationDefaultTimeout = 30.0;
     }
     
     NSAssert(NO, @"[SBTUITestTunnel] Failed waiting app to be ready");
-    [self terminate];
+    //[self terminate];
 }
 
 #pragma mark - Bonjour
@@ -171,7 +171,7 @@ static NSTimeInterval SBTUITunneledApplicationDefaultTimeout = 30.0;
     }
     
     NSAssert(NO, @"[SBTUITestTunnel] Failed to connect to client app %@", errorDict);
-    [self terminate];
+    //[self terminate];
 }
 
 #pragma mark - Timeout
@@ -656,7 +656,7 @@ static NSTimeInterval SBTUITunneledApplicationDefaultTimeout = 30.0;
 {
     if (!data) {
         NSAssert(NO, @"[SBTUITestTunnel] Failed to serialize object");
-        [self terminate];
+        //[self terminate];
         return @"";
     } else {
         return [[data base64EncodedStringWithOptions:0] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
@@ -706,7 +706,7 @@ static NSTimeInterval SBTUITunneledApplicationDefaultTimeout = 30.0;
     
     if (!request) {
         NSAssert(NO, @"[SBTUITestTunnel] Did fail to create url component");
-        [self terminate];
+        //[self terminate];
         return nil;
     }
     
